@@ -33,19 +33,16 @@ ggplot(davisdata, aes(x = Seat, y = alcohol)) +
 
 ```
 
-```{r}
-
-```
-## Now add in boxplot
-
-```{r}
-
-```
-  
   
 
 
 ## Numerical Summarys 
+
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+Looking at the average between the alcohol they are drinking is different depending on the seat. In the back they are drinking 9.62, the front are drinking 1.80, and the people in the back are drinking 6.35. This shows the people in the back are consuming more than the other two seats.
+
 
 ## Inferential Tests
 
