@@ -46,6 +46,42 @@ Looking at the average between the alcohol they are drinking is different depend
 
 ## Inferential Tests
 
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+```{r}
+plot(TukeyHSD(model1))
+```
+
+```{r}
+# Load the necessary package for ANOVA
+library(stats)
+
+# Perform the ANOVA test
+anova_result <- aov(alcohol ~ Seat, data = davisdata)
+
+# Check the ANOVA table
+anova_table <- summary(anova_result)
+print(anova_table)
+
+```
+
+
+
+```{r}
+# Perform Tukey HSD test
+tukey_result <- TukeyHSD(anova_result)
+
+# Print the results
+print(tukey_result)
+```
+
+
+Using a second test, we can see there is no difference between the middle and the front according to the plot. But, there is a difference between the back and the other two.
+
+
+
 ## Conclusions
 
-
+In conclusion, there is a difference alcohol consumption between those who sit in the back and those who sit in the middle and front. But there isn't a difference between the middle and front.
