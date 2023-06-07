@@ -1,7 +1,7 @@
 ---
 title: "Alcohol vs Seat choice"
 author: "Dorothy Decker"
-date: "Fall 2023"
+date: "Summer 2023"
 output: html_document
 ---
 
@@ -17,7 +17,20 @@ davisdata <- read.csv(file="UCDavis.csv")
 ## Our Goal is to answer this question Is there a difference between the alcohol consumed between the row
 ## you choose to sit in??
 
+```{r eval=FALSE}
+davisdata <- davisdata %>%
+mutate(across(where(is.character), as.factor))
+```
+
 ## Now with ggplot - first select the basic data
+
+
+```{r}
+ggplot(davisdata, aes(x = Seat, y = alcohol)) +
+  geom_boxplot() +
+  labs(title = "Box Plot of Alcohol by Seat")
+```
+
 
 ```{r}
 basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
