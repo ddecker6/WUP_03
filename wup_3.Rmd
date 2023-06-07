@@ -27,8 +27,10 @@ mutate(across(where(is.character), as.factor))
 
 ```{r}
 ggplot(davisdata, aes(x = Seat, y = alcohol)) +
-  geom_boxplot() +
-  labs(title = "Box Plot of Alcohol by Seat")
+  geom_boxplot(notch = TRUE, outlier.colour = "red") +
+  labs(title = "Notched Box Plot of Alcohol by Seat") +
+  theme(plot.title = element_text(hjust = 0.5))
+
 ```
 
 
